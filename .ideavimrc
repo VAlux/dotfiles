@@ -26,23 +26,26 @@ map Q gq
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
-map <leader>dd <Action>(Debug)
+"" Run currently selected run configuration
+map <leader>ar <Action>(Stop)
+
+"" Star debug session
+map <leader>ad <Action>(Debug)
+
+"" Stop currently launched run configuration
+map <leader>as <Action>(Stop)
 
 "" Toggle the breakpoint on the current line
-map <leader>db <Action>(ToggleLineBreakpoint)
-
-"" Stop currently launched configuration
-map <leader>ds <Action>(Stop)
+map <leader>b <Action>(ToggleLineBreakpoint)
 
 "" Rename the element under the cursor
 map <leader>cr <Action>(RenameElement)
 
 "" Show current file in project view
-map <leader>fs <Action>(SelectInProjectView)
+map <leader>fp <Action>(SelectInProjectView)
 
 "" Show file structure popup
-map <leader>fo <Action>(FileStructurePopup)
+map <leader>fs <Action>(FileStructurePopup)
 
 "" Toggle git annotations
 map <leader>ga <Action>(Annotate)
