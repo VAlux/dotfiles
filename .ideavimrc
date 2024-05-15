@@ -1,5 +1,15 @@
 let mapleader=" "
 
+" More consistent refactoring behaviour
+set idearefactormode=normal
+
+" Relative code line numbers
+set relativenumber
+
+set visualbell
+set showcmd
+set showmode
+
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
@@ -17,35 +27,39 @@ let g:highlightedyank_highlight_duration = "100"
 " Helper for the current line jump commands
 set quickscope
 
+" Smart shift+J
 set ideajoin
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+" Show String manipulation plugin popup menu
+map <leader>sm <Action>(StringManipulation.EditorPopupMenu)
+
+" AceJump plugin activation
+map <leader>aj <Action>(AceAction)
+
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
-"" Run currently selected run configuration
-map <leader>ar <Action>(Stop)
-
-"" Star debug session
-map <leader>ad <Action>(Debug)
-
-"" Stop currently launched run configuration
-map <leader>as <Action>(Stop)
+"" Map <leader>d to start debug
+map <leader>dd <Action>(Debug)
 
 "" Toggle the breakpoint on the current line
-map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>db <Action>(ToggleLineBreakpoint)
+
+"" Stop currently launched configuration
+map <leader>ds <Action>(Stop)
 
 "" Rename the element under the cursor
 map <leader>cr <Action>(RenameElement)
 
 "" Show current file in project view
-map <leader>fp <Action>(SelectInProjectView)
+map <leader>fs <Action>(SelectInProjectView)
 
 "" Show file structure popup
-map <leader>fs <Action>(FileStructurePopup)
+map <leader>fo <Action>(FileStructurePopup)
 
 "" Toggle git annotations
 map <leader>ga <Action>(Annotate)
@@ -54,3 +68,6 @@ map <leader>ga <Action>(Annotate)
 vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
+
+" edit this file
+:map <leader>9 :e ~/.ideavimrc<CR>
