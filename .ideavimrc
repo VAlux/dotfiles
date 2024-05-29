@@ -5,6 +5,7 @@ set idearefactormode=normal
 
 " Relative code line numbers
 set relativenumber
+set number
 
 set visualbell
 set showcmd
