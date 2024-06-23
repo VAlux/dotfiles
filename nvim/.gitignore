@@ -7,5 +7,4 @@ foo.*
 *.log
 data
 *.md
-lazyvim.json
 lua/plugins/example.lua
