@@ -18,7 +18,7 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
-" Surrounding with 'sa''sr'
+" Surrounding with 'sa''sr' hotkeys: https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
 set surround
 
 " Flash animation on yank
