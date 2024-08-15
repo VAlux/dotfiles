@@ -119,3 +119,7 @@ k = 'resize height -50'
 l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+run = ['move-node-to-workspace d']
