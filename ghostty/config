@@ -1,0 +1,16 @@
+theme = catppuccin-frappe
+font-family = "Iosevka Nerd Font Mono"
+font-size = 15
+
+keybind = global:control+shift+o=toggle_quick_terminal
+keybind = control+alt+j=new_split:down
+keybind = control+alt+k=new_split:up
+keybind = control+alt+h=new_split:left
+keybind = control+alt+l=new_split:right
+
+keybind = control+shift+j=goto_split:bottom
+keybind = control+shift+k=goto_split:top
+keybind = control+shift+h=goto_split:left
+keybind = control+shift+l=goto_split:right
+
+keybind = control+0=equalize_splits
