@@ -1,0 +1,9 @@
+{
+  "effortLevel": "medium",
+  "editorMode": "vim",
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash __HOME__/.claude/statusline-command.sh"
+  }
+}
