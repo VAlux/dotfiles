@@ -4,8 +4,6 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_SRC="$DOTFILES_DIR/claude"
 CLAUDE_DST="$HOME/.claude"
-ZELLIJ_SRC="$DOTFILES_DIR/zellij"
-ZELLIJ_DST="$HOME/.config/zellij"
 NVIM_SRC="$DOTFILES_DIR/nvim"
 NVIM_DST="$HOME/.config/nvim"
 GHOSTTY_SRC="$DOTFILES_DIR/ghostty"
@@ -71,14 +69,6 @@ for script in "$CLAUDE_SRC/scripts/"*; do
 done
 
 log "Done. Claude Code config is in sync."
-
-# ════════════════════════════════════════════════════════════════════════════
-# Zellij
-# ════════════════════════════════════════════════════════════════════════════
-mkdir -p "$ZELLIJ_DST"
-make_link "$ZELLIJ_SRC/config.kdl" "$ZELLIJ_DST/config.kdl"
-
-log "Done. Zellij config is in sync."
 
 # ════════════════════════════════════════════════════════════════════════════
 # Neovim
