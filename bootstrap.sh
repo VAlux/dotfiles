@@ -10,6 +10,15 @@ NVIM_SRC="$DOTFILES_DIR/nvim"
 NVIM_DST="$HOME/.config/nvim"
 GHOSTTY_SRC="$DOTFILES_DIR/ghostty"
 GHOSTTY_DST="$HOME/.config/ghostty"
+TUIOS_SRC="$DOTFILES_DIR/tuios"
+# tuios uses the OS config dir: ~/Library/Application Support on macOS, $XDG_CONFIG_HOME elsewhere
+if command -v tuios >/dev/null 2>&1; then
+  TUIOS_DST="$(dirname "$(tuios config path)")"
+elif [[ "$(uname)" == "Darwin" ]]; then
+  TUIOS_DST="$HOME/Library/Application Support/tuios"
+else
+  TUIOS_DST="${XDG_CONFIG_HOME:-$HOME/.config}/tuios"
+fi
 
 # Colours
 GREEN='\033[0;32m'
@@ -102,3 +111,11 @@ mkdir -p "$GHOSTTY_DST"
 make_link "$GHOSTTY_SRC/config" "$GHOSTTY_DST/config"
 
 log "Done. Ghostty config is in sync."
+
+# ════════════════════════════════════════════════════════════════════════════
+# TUIOS
+# ════════════════════════════════════════════════════════════════════════════
+mkdir -p "$TUIOS_DST"
+make_link "$TUIOS_SRC/config.toml" "$TUIOS_DST/config.toml"
+
+log "Done. TUIOS config is in sync."
